@@ -163,20 +163,15 @@
                 }
             }
         }
-        // Faz o gráfico do saldo devedor mensal, dos juros e do capital em um elemento <canvas>
-        // da HTML.
+        // Faz o gráfico do saldo devedor mensal, dos juros e do capital em um elemento <canvas> da HTML.
         // Se for chamado sem argumentos, basta apagar qualquer gráfico desenhado anteriormente.
         function chart(principal, interest, monthly, payments) {
             var graph = document.getElementById("graph"); // Obtém a marca <canvas>
-            graph.width = graph.width; // Mágica para apagar e redefinir o elemento
-            // canvas
-            // Se chamamos sem argumentos ou se esse navegador não suporta
-            // elementos gráficos em um elemento <canvas>, basta retornar agora.
+            graph.width = graph.width; // Mágica para apagar e redefinir o elemento canvas Se chamamos sem argumentos ou se esse navegador não suporta elementos gráficos em um elemento <canvas>, basta retornar agora.
             if (arguments.length == 0 || !graph.getContext) return;
             // Obtém o objeto "contexto" de <canvas> que define a API de desenho
             var g = graph.getContext("2d"); // Todo desenho é feito com esse objeto
-            var width = graph.width, height = graph.height; // Obtém o tamanho da tela de
-            // desenho
+            var width = graph.width, height = graph.height; // Obtém o tamanho da tela de desenho
             // Essas funções convertem números de pagamento e valores monetários em pixels
             function paymentToX(n) { return n * width/payments; }
             function amountToY(a) { return height-(a * height/(monthly*payments*1.05));}
@@ -184,8 +179,7 @@
             g.moveTo(paymentToX(0), amountToY(0)); // Começa no canto inferior esquerdo
             g.lineTo(paymentToX(payments), // Desenha até o canto superior direito
             amountToY(monthly*payments));
-            g.lineTo(paymentToX(payments), amountToY(0)); // Para baixo, até o canto
-            // inferior direito
+            g.lineTo(paymentToX(payments), amountToY(0)); // Para baixo, até o canto inferior direito
             g.closePath(); // E volta ao início
             g.fillStyle = "#f88"; // Vermelho-claro
             g.fill(); // Preenche o triângulo
@@ -194,8 +188,7 @@
             // O capital acumulado não é linear e é mais complicado de representar no gráfico
             var equity = 0;
             g.beginPath(); // Inicia uma nova figura
-            g.moveTo(paymentToX(0), amountToY(0)); // começando no canto inferior
-            // esquerdo
+            g.moveTo(paymentToX(0), amountToY(0)); // começando no canto inferior esquerdo
             for(var p = 1; p <= payments; p++) {
                 // Para cada pagamento, descobre quanto é o juro
                 var thisMonthsInterest = (principal-equity)*interest;
@@ -207,8 +200,7 @@
             g.fillStyle = "green"; // Agora usa tinta verde
             g.fill(); // E preenche a área sob a curva
             g.fillText("Total Equity", 20,35); // Rotula em verde
-            // Faz laço novamente, como acima, mas representa o saldo devedor como uma linha
-            // preta grossa no gráfico
+            // Faz laço novamente, como acima, mas representa o saldo devedor como uma linha preta grossa no gráfico
             var bal = principal;
             g.beginPath();
             g.moveTo(paymentToX(0),amountToY(bal));
@@ -222,8 +214,7 @@
             g.fillStyle = "black"; // Troca para texto preto
             g.fillText("Loan Balance", 20,50); // Entrada da legenda
             // Agora faz marcações anuais e os números de ano no eixo X
-            g.textAlign="center"; // Centraliza o texto nas
-            // marcas
+            g.textAlign="center"; // Centraliza o texto nas marcas
             var y = amountToY(0); // Coordenada Y do eixo X
             for(var year=1; year*12 <= payments; year++) { // Para cada ano
                 var x = paymentToX(year*12); // Calcula a posição da marca
