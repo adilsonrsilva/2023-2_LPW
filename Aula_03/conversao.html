@@ -7,12 +7,6 @@
 </head>
 <body>
     
-    
-    
-    <p id="numeroa"></p>
-    <p id="numerob"></p>
-    <p id="numeroc"></p>
-
     <script>
       // Cria um elemento de formulário
 var form = document.createElement("form");
@@ -53,8 +47,8 @@ form.addEventListener("submit", function(event) {
   event.preventDefault();
 
   // Obtém os valores dos elementos de entrada
-  var num1 = Number(document.getElementById("num1").value);
-  var num2 = Number(document.getElementById("num2").value);
+  var num1 = (document.getElementById("num1").value);
+  var num2 = (document.getElementById("num2").value);
 
   // Calcula a soma dos números
   var sum = num1 + num2;
