@@ -6,16 +6,63 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        a = 3
-        b = 4;
-        c = 3 + 4;
-        document.getElementById("numeroa").innerHTML = a;
-        document.getElementById("numerob").innerHTML = b;
-        document.getElementById("numerob").innerHTML = c;
-    </script>
+    
+    
+    
     <p id="numeroa"></p>
     <p id="numerob"></p>
     <p id="numeroc"></p>
+
+    <script>
+      // Cria um elemento de formulário
+var form = document.createElement("form");
+
+// Cria um elemento de entrada para o primeiro número
+var input1 = document.createElement("input");
+input1.type = "number";
+input1.id = "num1";
+input1.placeholder = "Digite o primeiro número";
+
+// Cria um elemento de entrada para o segundo número
+var input2 = document.createElement("input");
+input2.type = "number";
+input2.id = "num2";
+input2.placeholder = "Digite o segundo número";
+
+// Cria um elemento de botão para enviar o formulário
+var button = document.createElement("button");
+button.type = "submit";
+button.textContent = "Somar";
+
+// Cria um elemento de parágrafo para mostrar o resultado
+var result = document.createElement("p");
+result.id = "result";
+
+// Adiciona os elementos ao formulário
+form.appendChild(input1);
+form.appendChild(input2);
+form.appendChild(button);
+form.appendChild(result);
+
+// Adiciona o formulário ao corpo do documento
+document.body.appendChild(form);
+
+// Adiciona um evento de envio ao formulário
+form.addEventListener("submit", function(event) {
+  // Impede o comportamento padrão do formulário
+  event.preventDefault();
+
+  // Obtém os valores dos elementos de entrada
+  var num1 = Number(document.getElementById("num1").value);
+  var num2 = Number(document.getElementById("num2").value);
+
+  // Calcula a soma dos números
+  var sum = num1 + num2;
+
+  // Mostra o resultado no elemento de parágrafo
+  document.getElementById("result").textContent = "A soma é " + sum;
+});
+    </script>
+
 </body>
 </html>
