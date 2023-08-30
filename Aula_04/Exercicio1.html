@@ -6,15 +6,60 @@
     <title>Document</title>
 </head>
 <body>
-    <table border="1">
-        <thead>
-            <td>
-                1
-            </td>
-            <td>
-                2
-            </td>
-        </thead>
-    </table>
+  <form >
+    <input type="number" id="num1" placeholder="Digite um numero"><br><br><br>
+    <input type="number" id="num2" placeholder="Digite um numero"><br><br><br>
+  </form>
+  <button onclick="somar()">Somar</button>
+  <button onclick="subtrair()">Subtrair</button>
+  <button onclick="multiplicar()">Multiplicar</button>
+  <button onclick="dividir()">Dividir</button>
+    <script>
+        function somar(){
+          var num1 = Number(document.getElementById("num1").value);
+          var num2 = Number(document.getElementById("num2").value);
+
+          // Calcula a soma dos números
+          var sum = num1 + num2;
+
+          // Mostra o resultado no elemento de parágrafo
+          document.getElementById("result").innerText = "A soma é " + sum;
+        }
+
+        function subtrair(){
+          var num1 = Number(document.getElementById("num1").value);
+          var num2 = Number(document.getElementById("num2").value);
+
+          // Calcula a soma dos números
+          var sum = num1 - num2;
+
+          // Mostra o resultado no elemento de parágrafo
+          document.getElementById("result").innerText = "A subtração é " + sum;
+        }
+
+        function multiplicar(){
+          var num1 = Number(document.getElementById("num1").value);
+          var num2 = Number(document.getElementById("num2").value);
+
+          // Calcula a soma dos números
+          var sum = num1 * num2;
+
+          // Mostra o resultado no elemento de parágrafo
+          document.getElementById("result").innerText = "O produto é " + sum;
+        }
+
+        function dividir(){
+          var num1 = Number(document.getElementById("num1").value);
+          var num2 = Number(document.getElementById("num2").value);
+
+          // Calcula a soma dos números
+          var sum = num1 / num2;
+
+          // Mostra o resultado no elemento de parágrafo
+          document.getElementById("result").innerText = "A divisao é " + sum;
+        }
+
+    </script>
+ <p id="result"></p>
 </body>
 </html>
