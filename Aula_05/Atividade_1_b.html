@@ -13,11 +13,18 @@
     <script>
          function verificar(){
           let palavra = document.getElementById("palavra").value;
+          palavra = palavra.toUpperCase();
 
-          if (palavra.charAt(0).toUpperCase() === "A") {
-            document.getElementById("result").innerText = "A palavra começa com A";
+          let palavraInvertida = "";
+
+          for (let i = palavra.length - 1; i >=0; i--) {
+            palavraInvertida += palavra[i];            
+          }
+
+          if (palavra === palavraInvertida) {
+            document.getElementById("result").innerText = "A palavra É";
           } else {
-            document.getElementById("result").innerText = "A palavra não começa com A";
+            document.getElementById("result").innerText = "A palavra não É";
           }
         }
 
