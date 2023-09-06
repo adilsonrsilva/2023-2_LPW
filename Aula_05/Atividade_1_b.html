@@ -6,6 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form >
+        <input type="text" id="palavra" placeholder="Digite uma Palavra"><br><br><br>
+    </form>
+    <button onclick="verificar()">Verificar</button>
+    <script>
+         function verificar(){
+          let palavra = document.getElementById("palavra").value;
+
+          if (palavra.charAt(0).toUpperCase() === "A") {
+            document.getElementById("result").innerText = "A palavra começa com A";
+          } else {
+            document.getElementById("result").innerText = "A palavra não começa com A";
+          }
+        }
+    </script>
+    <p id="result"></p>    
 </body>
 </html>

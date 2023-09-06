@@ -6,6 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form >
+        <input type="number" id="idade" placeholder="Digite um Número"><br><br><br>
+    </form>
+    <button onclick="verificar()">Verificar</button>
+    <script>
+         function verificar(){
+          let numero = Number(document.getElementById("idade").value) ;
+
+          if (numero >= 18) {
+            document.getElementById("result").innerText = "Maior de idade";
+          } else {
+            document.getElementById("result").innerText = "Menor de idade";
+          }
+        }
+    </script>
+    <p id="result"></p>
 </body>
 </html>
