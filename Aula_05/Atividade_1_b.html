@@ -12,19 +12,20 @@
     <button onclick="verificar()">Verificar</button>
     <script>
         function verificar(){
-        let palavra = document.getElementById("palavra").value;
-        palavra = palavra.toLowerCase();
+            let palavra = document.getElementById("palavra").value;
+            palavra = palavra.toLowerCase();
 
-        let palavrainvertida;
+            let palavrainvertida;
 
-        for (let i = palavra.length - 1; index >= 0; index--) {
-            palavrainvertida = palavra[i];
-        }
+            for (let i = palavra.length - 1; index >= 0; index--) {
+                palavrainvertida = palavra[i];
+            }
 
-        if (palavra === palavrainvertida) {
-            document.getElementById("result").innerText = "A palavra é um palíndromo";
-        } else {
-            document.getElementById("result").innerText = "A palavra não é um palíndromo";
+            if (palavra === palavrainvertida) {
+                document.getElementById("result").innerText = "A palavra é um palíndromo";
+            } else {
+                document.getElementById("result").innerText = "A palavra não é um palíndromo";
+            }
         }
 
     </script>
