@@ -11,15 +11,22 @@
     </form>
     <button onclick="verificar()">Verificar</button>
     <script>
-         function verificar(){
-          let palavra = document.getElementById("palavra").value;
+        function verificar(){
+        let palavra = document.getElementById("palavra").value;
+        palavra = palavra.toLowerCase();
 
-          if (palavra.charAt(0).toUpperCase() === "A") {
-            document.getElementById("result").innerText = "A palavra começa com A";
-          } else {
-            document.getElementById("result").innerText = "A palavra não começa com A";
-          }
+        let palavrainvertida;
+
+        for (let i = palavra.length - 1; index >= 0; index--) {
+            palavrainvertida = palavra[i];
         }
+
+        if (palavra === palavrainvertida) {
+            document.getElementById("result").innerText = "A palavra é um palíndromo";
+        } else {
+            document.getElementById("result").innerText = "A palavra não é um palíndromo";
+        }
+
     </script>
     <p id="result"></p>    
 </body>
