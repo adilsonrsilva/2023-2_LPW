@@ -6,6 +6,64 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h3>10 primeiros números com for</h3>
+    <button type="button" onclick="dez()">Comparar</button>
+    <p id="resultado"></p>
+
+    <h3>10 primeiros números com while</h3>
+    <button type="button" onclick="dez_while()">Comparar</button>
+    <p id="resultado_for"></p>
+
+    <h3>10 primeiros números pares com while</h3>
+    <button type="button" onclick="dez_while_par()">Comparar</button>
+    <p id="resultado_w_par"></p>
+
+    <h3>10 primeiros números pares com for</h3>
+    <button type="button" onclick="dez_for_par()">Comparar</button>
+    <p id="resultado_f_par"></p>
+
+    <script>
+        const dez_primeiros = document.getElementById("resultado")
+        const dez_w = document.getElementById("resultado_for")
+        const dez_w_p = document.getElementById("resultado_w_par")
+        const dez_f_p = document.getElementById("resultado_f_par")
+
+
+        function dez(){
+            for(i=1; i<=10;i++){
+            dez_primeiros.innerHTML += `${i}</br>`
+        }
+        }
+
+        function dez_while(){
+            i = 1
+            while(i<=10){
+
+                dez_w.innerHTML += `${i}</br>`
+
+            i++
+        }
+        }
+
+        function dez_while_par(){
+            i = 1
+            while(i<=10){
+                if(i%2 == 0){
+                dez_w_p.innerHTML += `${i}</br>`
+            }
+            i++
+        }
+        }
+
+        function dez_for_par(){
+            for(i=1; i<=10;i++){
+                if(i%2 == 0){
+                dez_f_p.innerHTML += `${i}</br>`
+            }
+        }
+        }
+        
+    </script>
+
 </body>
 </html>
