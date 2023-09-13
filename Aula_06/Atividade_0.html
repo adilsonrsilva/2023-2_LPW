@@ -46,13 +46,16 @@
         }
 
         function dez_while_par(){
-            i = 1
-            while(i<=10){
-                if(i%2 == 0){
-                dez_w_p.innerHTML += `${i}</br>`
+            var num = 0; // variável que armazena o número atual
+            var cont = 0; // variável que conta quantos números pares foram encontrados
+            while (cont < 10) { // laço de repetição que roda enquanto cont for menor que 10
+                if (num % 2 == 0) { // condição que verifica se o número é par
+                    //console.log(num); // exibe o número na tela
+                    dez_w_p.innerHTML += `${num}</br>`
+                    cont++; // incrementa o contador de números pares
+                }
+                num++; // incrementa o número atual
             }
-            i++
-        }
         }
 
         function dez_for_par(){
