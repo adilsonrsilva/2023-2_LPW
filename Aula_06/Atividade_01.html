@@ -17,13 +17,26 @@
 
     <script>
         function media3numeros(){
+
+            let media3numeros = Number.NEGATIVE_INFINITY;
+
+            for (let i = 0; i < arguments.length; i++){
+                if arguments[i] > 0{
+                    soma += arguments[i].value
+                }
+
+            }
+
+/*            
+
+
           let numero1 = Number(document.getElementById("num1").value) ;
           let numero2 = Number(document.getElementById("num2").value) ;
           let numero3 = Number(document.getElementById("num3").value) ;
           let media = 0;
 
           media = (numero1 + numero2 + numero3)/3;
-
+*/
           document.getElementById("resultado").innerText = "Média = " + media;
 
         }
