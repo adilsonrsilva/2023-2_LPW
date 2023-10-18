@@ -1,10 +1,10 @@
 function MostraNome(){
             
-    let nome = document.getElementById("nome1").value;
-    let meio = document.getElementById("nome2").value;
-    let sobrenome = document.getElementById("nome3").value;
-    resultado = document.getElementById("resultado");
+    let nome = window.prompt('Informe o Primeiro Nome');
+    let meio = window.prompt('Informe o nome do meio');
+    let sobrenome = window.prompt('Informe o Último Nome');
+    let nomecompleto = nome + ' ' + meio + ' ' + sobrenome;
+    resultado = window.alert('Nome Completo: ' + nomecompleto);
 
-    resultado.innerText = "O nome completo da pessoa é: " + nome + " " + meio + " " + sobrenome;
     
 }
